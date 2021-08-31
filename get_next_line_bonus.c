@@ -6,7 +6,7 @@
 /*   By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:54:47 by rgelin            #+#    #+#             */
-/*   Updated: 2021/08/31 16:22:46 by rgelin           ###   ########.fr       */
+/*   Updated: 2021/08/31 16:26:52 by rgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,6 @@ static char	*ft_returned_value(char **save)
 		ft_free(save);
 		return (line);
 	}
-	
 }
 
 char	*get_next_line(int fd)
