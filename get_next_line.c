@@ -6,7 +6,7 @@
 /*   By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:54:47 by rgelin            #+#    #+#             */
-/*   Updated: 2021/08/31 15:43:03 by rgelin           ###   ########.fr       */
+/*   Updated: 2021/08/31 15:59:31 by rgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	new_line(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -34,7 +34,8 @@ static char	*ft_copy_line(char *str)
 	i = 0;
 	if (!str)
 		return (NULL);
-	if (!(line = malloc(sizeof(char) * (ft_strlen(str) + 1))))
+	line = malloc(sizeof(char) * (ft_strlen(str) + 1));
+	if (!line)
 		return (NULL);
 	while (str[i] && str[i] != '\n')
 	{
@@ -60,7 +61,8 @@ static char	*ft_copy_remain(char *str)
 		i++;
 	if (!str[i])
 		return (NULL);
-	if (!(remain = malloc(sizeof(char) * (ft_strlen(str) - i + 1))))
+	remain = malloc(sizeof(char) * (ft_strlen(str) - i + 1));
+	if (!remain)
 		return (NULL);
 	i += 1;
 	while (str[i])
@@ -71,7 +73,7 @@ static char	*ft_copy_remain(char *str)
 
 static char		*ft_returned_value(char **save)
 {
-	int		i;
+	int	i;
 	char	*line;
 	char	*temp;
 
@@ -94,15 +96,14 @@ static char		*ft_returned_value(char **save)
 		ft_free(save);
 		return (line);
 	}
-	
 }
 
 char	*get_next_line(int fd)
 {
 	char	buf[BUFFER_SIZE + 1];
 	static char	*save = NULL;
-	int		ret;
-	char 	*temp;
+	int	ret;
+	char	*temp;
 
 	if (fd < 0 || fd > OPEN_MAX || BUFFER_SIZE < 1) 
 		return (NULL);
