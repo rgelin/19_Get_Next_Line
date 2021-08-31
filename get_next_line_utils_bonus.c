@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:54:51 by rgelin            #+#    #+#             */
-/*   Updated: 2021/08/30 23:36:26 by rgelin           ###   ########.fr       */
+/*   Updated: 2021/08/31 16:19:16 by rgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,24 +64,21 @@ char	*ft_strjoin(char *s1, char *s2)
 
 	i = 0;
 	j = 0;
-	if (s1 && s2)
-	{
-		str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-		if (!str)
-			return (NULL);
-		while (s1[i])
-		{
-			str[i] = s1[i];
-			i++;
-		}
-		while (s2[j])
-		{
-			str[i + j] = s2[j];
-			j++;
-		}
-		str[i + j] = '\0';
-		return (str);
-	}
-	else
+	if (!s1 || !s2)
 		return (NULL);
+	str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!str)
+		return (NULL);
+	while (s1[i])
+	{
+		str[i] = s1[i];
+		i++;
+	}
+	while (s2[j])
+	{
+		str[i + j] = s2[j];
+		j++;
+	}
+	str[i + j] = '\0';
+	return (str);
 }

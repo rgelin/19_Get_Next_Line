@@ -6,7 +6,7 @@
 /*   By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:54:47 by rgelin            #+#    #+#             */
-/*   Updated: 2021/08/31 16:12:52 by rgelin           ###   ########.fr       */
+/*   Updated: 2021/08/31 16:18:24 by rgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ char	*get_next_line(int fd)
 			save = ft_strdup(buf);
 		else
 		{
-			temp = ft_strjoin_protected(save, buf);
+			temp = ft_strjoin(save, buf);
 			ft_free(&save);
 			save = temp;
 		}

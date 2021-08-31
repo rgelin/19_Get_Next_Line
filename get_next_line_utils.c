@@ -6,7 +6,7 @@
 /*   By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:54:51 by rgelin            #+#    #+#             */
-/*   Updated: 2021/08/31 16:15:34 by rgelin           ###   ########.fr       */
+/*   Updated: 2021/08/31 16:18:10 by rgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,17 +82,4 @@ char	*ft_strjoin(char *s1, char *s2)
 	}
 	str[i + j] = '\0';
 	return (str);
-}
-
-char	*ft_strjoin_protected(char *s1, char *s2)
-{
-	char	*str;
-
-	if (s1 && s2)
-	{
-		str = ft_strjoin(s1, s2);
-		return (str);
-	}
-	else
-		return (NULL);
 }
