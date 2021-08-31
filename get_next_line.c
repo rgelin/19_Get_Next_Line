@@ -6,7 +6,7 @@
 /*   By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:54:47 by rgelin            #+#    #+#             */
-/*   Updated: 2021/08/31 15:59:31 by rgelin           ###   ########.fr       */
+/*   Updated: 2021/08/31 16:12:52 by rgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,9 @@ static char	*ft_copy_remain(char *str)
 	return (remain);
 }
 
-static char		*ft_returned_value(char **save)
+static char	*ft_returned_value(char **save)
 {
-	int	i;
+	int		i;
 	char	*line;
 	char	*temp;
 
@@ -100,12 +100,12 @@ static char		*ft_returned_value(char **save)
 
 char	*get_next_line(int fd)
 {
-	char	buf[BUFFER_SIZE + 1];
+	char		buf[BUFFER_SIZE + 1];
 	static char	*save = NULL;
-	int	ret;
-	char	*temp;
+	int			ret;
+	char		*temp;
 
-	if (fd < 0 || fd > OPEN_MAX || BUFFER_SIZE < 1) 
+	if (fd < 0 || fd > OPEN_MAX || BUFFER_SIZE < 1)
 		return (NULL);
 	ret = read(fd, buf, BUFFER_SIZE);
 	while (ret > 0)
@@ -115,7 +115,7 @@ char	*get_next_line(int fd)
 			save = ft_strdup(buf);
 		else
 		{
-			temp = ft_strjoin(save, buf);
+			temp = ft_strjoin_protected(save, buf);
 			ft_free(&save);
 			save = temp;
 		}
