@@ -6,12 +6,12 @@
 /*   By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:54:44 by rgelin            #+#    #+#             */
-/*   Updated: 2021/08/31 16:28:11 by rgelin           ###   ########.fr       */
+/*   Updated: 2021/08/31 16:31:30 by rgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # include <stdlib.h>
 # include <limits.h>
